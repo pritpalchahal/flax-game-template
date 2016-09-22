@@ -1,7 +1,7 @@
 angular.module('collocationmatching.services', [])
 
 .factory('Data', function ($http, $cordovaNetwork, ionicToast, Ids, $rootScope, $q) {
-  const THIS_ACTIVITY = "CollocationMatching";//name of this Activity
+  const THIS_ACTIVITY = "CollocationGuessing";//name of this Activity
   const NICE_TITLE = "Collocation Matching";//for displaying only
 
   const ALL_COLLECTIONS_URL = "http://collections.flax.nzdl.org/greenstone3/flax?a=fp&sa=library&o=xml";
@@ -179,22 +179,12 @@ angular.module('collocationmatching.services', [])
         return $http.get(final_url).then(function(response){
           var x2js = new X2JS();
           var jsonData = x2js.xml_str2json(response.data);
-          temp_words = jsonData.response.player.word;
-          var uniqueId = 0;
-          for(var j=0; j<temp_words.length; j++){
-            var collo = temp_words[j].collo;
-            words[collId][exId][j] = [];
-            slidesCount[collId][exId].push(collo.length);
-            for(var k=0; k<collo.length; k++){
-              var text = collo[k].__text;
-              var left = getLeft(text);
-              var right = getRight(text);
-              var obj = {"left":left,"right":right,"drop":"","id":uniqueId,"isDraggable":true,get isCorrect(){return (this.right == this.drop);}};
-              uniqueId++;
-              words[collId][exId][j].push(obj);
-            };
-          };
-          return words[collId][exId];
+
+          /*
+          * mainpulate data here and return required response
+          */
+
+          return jsonData;
         },function(error){
           return error;
         });
@@ -209,21 +199,6 @@ angular.module('collocationmatching.services', [])
       }
     }
     return null;
-  }
-
-  getSlidesCount = function(collId,exId){
-    if(!slidesCount[collId][exId]){
-      return 0;
-    }
-    // return Math.min.apply(Math,slidesCount[collId][exId]);
-    return Math.max.apply(Math,slidesCount[collId][exId]);
-  }
-
-  getMinSlidesCount = function(collId,exId){
-    if(!slidesCount[collId][exId]){
-      return 0;
-    }
-    return Math.min.apply(Math,slidesCount[collId][exId]);
   }
 
   removeEx = function(collId,ex) {
@@ -249,15 +224,6 @@ angular.module('collocationmatching.services', [])
     return descriptions;
   }
 
-  var getLeft = function(word){
-    // return word.split(" ")[0];
-    return word.substr(0,word.indexOf(" "));
-  }
-
-  var getRight = function(word){
-    return word.substr(word.indexOf(" ")+1);
-  };
-
   var getErrorMsg = function(){
     return "No Internet connection available!";
   }
@@ -279,8 +245,6 @@ angular.module('collocationmatching.services', [])
     getSingleEx: getSingleEx,
 
     getExTitle: getExTitle,
-    getSlidesCount: getSlidesCount,
-    getMinSlidesCount: getMinSlidesCount,
 
     removeEx: removeEx,
     removeColl: removeColl,
