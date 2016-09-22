@@ -1,0 +1,22 @@
+<!--
+  This template loads for the 'exercise' state (app.js)
+  draggableObjects & dropped are $scope variables created in the ExerciseCtrl controller (controllers.js)
+  The ExerciseCtrl pulls data from the Exercise service (service.js)
+  The Exercise service returns a json promise of exercise data
+-->
+<ion-view view-title="{{title}}">
+  <ion-nav-buttons side="right">
+      <button class="button button-icon ion-more" ng-click="openPopover($event)">
+      </button>
+  </ion-nav-buttons>
+  <ion-content scroll="false">
+        <ion-content class="has-header has-footer has-subfooter">
+        {{words}}
+        </ion-content>
+        <div class="bar bar-footer" ng-hide="hide">
+          <div class="title check-button" ng-click="checkAnswer()">
+            Check Answer
+          </div>
+        </div>
+  </ion-content>
+</ion-view>

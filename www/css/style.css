@@ -1,0 +1,319 @@
+/*
+*=== CUSTOM STYLING OF SLIDE BULLETS (BOTTOM OF PAGE) ===
+*/
+.swiper-pagination-bullet {
+    /*width: 15px;
+    height: 15px;*/
+    color:#000;
+    opacity: 1;
+    background: rgba(0,0,0,0.2);
+}
+.swiper-pagination-bullet-active {
+    color:#fff;
+    background: #3F9200;
+}
+
+/*
+*=== POPOVERS ===
+*/
+.pop-image{
+  padding-left: 50px;
+  background-repeat: no-repeat;
+  background-attachment: relative;
+  /*"fixed" value in this property causes image not to display in iOS and browser, but it works in android*/
+  background-position: left center;
+  background-size: 40px 40px;
+}
+.popover {
+  height: auto !important;
+}
+.popover ion-header-bar {
+  position: relative;
+}
+.popover ion-content {
+  top: 0;
+  position: relative;
+}
+.popover-inner-content {
+  width: 100%;
+  padding: 5px 20px;
+}
+popover-style{
+    max-height: 120px;
+    border: 1px solid red;
+    /*position: relative;
+    height: auto;
+    min-height: 100% !important;*/
+}
+
+/*
+*=== DRAGGABLES ===
+*/
+.dragged{
+  color:grey;
+  text-decoration: line-through;
+  cursor: default;
+}
+[ng-drag]{
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.draggables {
+  display: block;
+  background: rgba(210,210,210,0.5);
+  /*padding:4px;*/
+  width: 100%;
+  border-bottom: 2px solid #3F9200;
+
+}
+/*.draggables::after{
+  display: block;
+  content: "";
+  clear: both;
+}*/
+[ng-drag]{
+    /*background: rgba(255,0,0, 0.5);*/
+    /*border: solid 1px black;*/
+    color:black;
+    text-align: left;
+    font-size: 12px;
+    /*padding: 10px;*/
+    width: inherit;
+    display: block;
+    cursor: move;
+}
+.fixed-value {
+    background: rgba(128,128,128, 0.5);
+    border: solid 1px black;
+    color:black;
+    text-align: center;
+    font-size: 12px;
+    /*padding: 10px;*/
+    display: block;
+    position: relative;
+}
+[ng-drop]{
+    /*background: rgba(0,255,0, 0.5);*/
+    border: solid 1px black;
+    text-align: center;
+    /*padding:10px;*/
+    display: block;
+    margin:0 0px;
+    position: relative;
+}
+.drags{
+  border: 1px solid black;
+  margin: 1px;
+}
+
+[ng-drag].drag-over{
+    /*color:red;*/
+    font-size: 16px;
+}
+[ng-drag].dragging{
+    opacity: 0.5;
+    border: none;
+}
+[ng-drop].drag-enter{
+    border:solid 5px #3F9200;
+}
+[ng-drop] span.title{
+    /*display: block;
+    position: absolute;
+    border-style: solid;
+    top:50%;
+    left:50%;
+    width: 200px;
+    height: 20px;
+    margin-left: -100px;
+    margin-top: -10px;*/
+}
+[ng-drop] div{
+    position: relative;
+    z-index: 2;
+}
+/*
+*-- Unused Drag Styling --
+*/
+ul.draggable-objects:after{
+    /*display: block;
+    content:"";
+    clear:both;*/
+}
+.draggable-objects li{
+  display: table-cell;
+  margin:0px;
+  width:auto;
+}
+ul{
+  width:100%;
+  display: table;
+  /*justify-content: center;
+  list-style: none;*/
+}
+li{
+  /*display: table-cell;
+  margin:0px;
+  width:auto;*/
+  /*padding: 10px;*/
+}
+
+/*
+*=== NAVBAR AND HEADER BARS ===
+*/
+.navbar{
+  background-color: #B8EBBF  !important; /*#B8EBBF,A0CCA6,76967A,3F9200,AEAEB5*/
+  border-bottom: 2px solid #3F9200 !important;
+  border-top: 1px solid #3F9200 !important;
+}
+.navbar-title {
+  /*background-repeat: no-repeat;*/
+  /*background-position: 50%;*/
+  height: 100%;
+  position: absolute;
+  left:0px;
+  top:0px;
+}
+.bar-subheader{
+  background-color: #AEAEB5 !important;
+  border-bottom: 2px solid #3F9200 !important;
+  border-top: 1px solid #3F9200 !important;
+}
+.bar-footer{
+  margin-bottom: 40px;
+  width:100%;
+  border-bottom: 2px solid #3F9200 !important;
+  background-color: #A0CCA6;
+}
+.bar .button.back-button{
+  align-self: center;
+}
+
+/*
+*=== IONIC POPUP ===
+*/
+.popup{
+  /*background-color: #AEAEB5 !important;*/
+  width:90% !important;
+}
+.popup-head{
+  background-color: #B8EBBF  !important;
+  background-image: url('../img/header_icon.png') !important;
+  background-repeat: no-repeat !important;
+  background-attachment: relative !important;
+  /*"fixed" value in this property causes image not to display in iOS and browser, but it works in android*/
+  background-position: left center !important;
+  background-size: 50px 50px;
+  border-bottom: 2px solid #3F9200 !important;
+}
+.popup-title {
+  /*color: black !important;*/
+}
+.popup-sub-title{
+}
+.popup-body {
+  background-color: white !important;
+  padding: 10px 10px !important;
+  text-align: justify; 
+}
+.popup-buttons {
+  background-color: #A0CCA6 !important;
+}
+.popup-buttons .button{
+  font-style: italic !important;
+}
+/*
+.popup-buttons .button-positive{
+  font-style: italic !important;
+  margin-left: 0px !important;
+  border-radius: 0px !important;
+}
+.popup-buttons .button-default{
+  font-style: italic !important;
+  margin-right: 0px !important;
+  border-radius: 0px !important;
+}*/
+
+/* 
+*=== SUMMARY TABLES ===
+*/
+.summary-table th{
+  text-align: left;
+  border: none;
+  background-color: white;
+}
+.summary-table{
+  width:100%;
+  border: none;
+}
+/*
+*-- Default Tables --
+*/
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+/*
+*-- ion-content in ex-detail --
+*/
+.custom-content.scroll-content {
+  /*position: absolute; !important;*/
+  margin-top: 10px;
+}
+
+/*
+*=== OTHER IMPORTANT ===
+*/
+.check-button{
+  cursor:pointer;
+  font-style: italic;
+}
+.bar.bar-footer{
+  border-top: solid 2px #3F9200;
+}
+.slideNo{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 12px;
+  padding-left:5px;
+}
+.my-back-button{
+  content: url('../img/back-image.jpg');
+  width:55px;
+}
+.text{
+    font-size:12px;
+}
+.row {
+    display: flex; /* equal height of the children */
+    flex-wrap: wrap;
+    align-content: center;
+    -webkit-align-content:center;
+}
+.col{
+    flex: 1; /* additionally, equal width */
+    /*padding: 1em;
+    border: solid;
+    align-content: center;*/
+}
+p,h2{
+    margin: 10px;
+}
+.div-button{
+    cursor: pointer;
+}
+*{
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}

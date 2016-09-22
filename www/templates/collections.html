@@ -1,0 +1,25 @@
+<ion-view view-title="{{title}}">
+  <ion-nav-buttons side="left">
+    <img src="img/header_icon.png" class="navbar-title">
+  </ion-nav-buttons>
+  <ion-header-bar class="bar-subheader">
+    <h2 class="title">Collections</h2>
+  </ion-header-bar>
+  <ion-nav-buttons side="right">
+      <button class="button button-icon ion-more" ng-click="openPopover($event)">
+      </button>
+  </ion-nav-buttons>
+  
+  <ion-content>
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <ion-list>
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="coll in collections" type="item-text-wrap" href="#/collections/{{coll}}">
+        <div style="font-size:12px;">{{coll}}</div>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
