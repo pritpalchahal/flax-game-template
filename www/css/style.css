@@ -118,7 +118,7 @@ popover-style{
     border: none;
 }
 [ng-drop].drag-enter{
-    border:solid 5px #3F9200;
+  background-color: #6E9A74;
 }
 [ng-drop] span.title{
     /*display: block;
