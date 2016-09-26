@@ -223,7 +223,13 @@ li{
   background-color: #A0CCA6 !important;
 }
 .popup-buttons .button{
-  font-style: italic !important;
+  /*font-style: oblique; !important;*/
+  border-color: #3F9200;
+  background-color: #64906A;
+  /*color: red;*/
+}
+.popup-buttons .button.activated{
+  background-color: #6E9A74;
 }
 /*
 .popup-buttons .button-positive{
@@ -295,6 +301,13 @@ table tr:nth-child(even) {
 }
 .text{
     font-size:12px;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens:auto;
+    -ms-hyphens:auto;
+    hyphens: auto;
 }
 .row {
     display: flex; /* equal height of the children */

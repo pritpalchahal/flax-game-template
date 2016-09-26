@@ -1,8 +1,8 @@
 angular.module('collocationmatching.services', [])
 
 .factory('Data', function ($http, $cordovaNetwork, ionicToast, Ids, $rootScope, $q) {
-  const THIS_ACTIVITY = "CollocationGuessing";//name of this Activity
-  const NICE_TITLE = "Collocation Matching";//for displaying only
+  const THIS_ACTIVITY = "CollocationMatching";//name of this Activity
+  const NICE_TITLE = "Flax template";//for displaying only
 
   const ALL_COLLECTIONS_URL = "http://collections.flax.nzdl.org/greenstone3/flax?a=fp&sa=library&o=xml";
 
@@ -189,12 +189,17 @@ angular.module('collocationmatching.services', [])
         return $http.get(final_url).then(function(response){
           var x2js = new X2JS();
           var jsonData = x2js.xml_str2json(response.data);
+          var temp_words = jsonData.response.player.word;
 
           /*
           * mainpulate data here and return required response
           */
+          //e.g.
+          angular.forEach(temp_words,function(word){
+            words[collId][exId].push(word);
+          });
 
-          return jsonData;
+          return words[collId][exId];
         },function(error){
           return error;
         });
