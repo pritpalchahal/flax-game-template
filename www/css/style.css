@@ -69,11 +69,6 @@ popover-style{
   border-bottom: 2px solid #3F9200;
 
 }
-/*.draggables::after{
-  display: block;
-  content: "";
-  clear: both;
-}*/
 [ng-drag]{
     /*background: rgba(255,0,0, 0.5);*/
     /*border: solid 1px black;*/
@@ -104,11 +99,6 @@ popover-style{
     margin:0 0px;
     position: relative;
 }
-.drags{
-  border: 1px solid black;
-  margin: 1px;
-}
-
 [ng-drag].drag-over{
     /*color:red;*/
     font-size: 16px;
@@ -225,7 +215,7 @@ li{
 .popup-buttons .button{
   /*font-style: oblique; !important;*/
   border-color: #3F9200;
-  background-color: #64906A;
+  background-color: #82AE88;//64906A
   /*color: red;*/
 }
 .popup-buttons .button.activated{
