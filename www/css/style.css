@@ -162,10 +162,16 @@ li{
 .navbar-title {
   /*background-repeat: no-repeat;*/
   /*background-position: 50%;*/
-  height: 100%;
   position: absolute;
   left:0px;
+
+  /* For all other devices, use following two lines */
+  height: 100%;
   top:0px;
+
+  /* For iPhone, use following two lines */
+  /*height: 70%;*/
+  /*bottom: 0px;*/
 }
 .bar-subheader{
   background-color: #AEAEB5 !important;
