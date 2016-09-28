@@ -77,9 +77,13 @@ angular.module('collocationmatching', ['ionic', 'collocationmatching.controllers
   $ionicPlatform.registerBackButtonAction(function (event){
     var currentState = $ionicHistory.currentStateName();
     if(currentState == "collections"){
-      // navigator.app.exitApp();//exit the app
-      backAsHome.trigger();//exitApp as home button (don't kill the app)
-      // event.preventDefault();//don't do anything
+      if(isEdge){
+        navigator.app.exitApp();//exit the app
+      }
+      else{
+        backAsHome.trigger();//exitApp as home button (don't kill the app)
+      }
+        //event.preventDefault();//don't do anything
     }
     else{
       //this can also be accompolished using $ionicPlatform.onHardwareBackButton
