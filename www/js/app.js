@@ -8,19 +8,20 @@ angular.module('collocationmatching', ['ionic', 'collocationmatching.controllers
 
 .run(function($ionicPlatform, $ionicHistory, $stateParams, $filter, $ionicPopup, $window, $rootScope,
   Data, StateData, SummaryData, ionicToast, Ids, $ionicLoading) {
+  $rootScope.timeout = 10000;//global timeout for all http requests in milliseconds
 
   //check network connection
   $rootScope.online = navigator.onLine;
   $window.addEventListener("offline", function () {
     $rootScope.$apply(function() {
       $rootScope.online = false;
-      ionicToast.show("offline",'bottom');
+      // ionicToast.show("offline",'bottom');
     });
   }, false);
   $window.addEventListener("online", function () {
     $rootScope.$apply(function() {
       $rootScope.online = true;
-      ionicToast.show("online",'bottom');
+      // ionicToast.show("online",'bottom');
     });
   }, false);
 
